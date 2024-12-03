@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+form{
+  display: flex;
+  justify-content: center;
+}
+.myForm {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
+.file-input-wrapper {
+  margin: 5px;
+}
+.section {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: center;
+}
+.custom-select {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23666' d='M0 3l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  width: 175px;
+}
+.color-picker-input {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.custom-file-input {
+  position: absolute;
+  opacity: 0;
+}
+.custom-file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: 1px solid #fafcfe;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.form-input {
+  font-size: 16px;
+  color: #333;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  width: 200px;
+  border-radius: 8px;
+  margin: 5px;
+}
+.btn {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+@media (max-width: 600px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .form-input {
+    width: 300px;
+    margin: 10px;
+  
+  }
+
+  .custom-select {
+    margin: 10px;
+    width: 300px;
+  }
+
+  .color-picker-input {
+    margin: 10px;
+    width: 300px;
+  }
+
+  .sectionbtn {
+    display: flex;
+    flex-direction: row;
+  }
+  .myForm{
+    border: none;
+  }
+  .btn{
+    margin: 10px;
+  }
+}
+h1{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+h1:hover{
+  color: #333;
+}
+
+.custom-file-label:hover{
+  color: #000000;
+  background-color: white;
+}
+.btn:hover{
+  color: #000000;
+  background-color: white;
+}
+.green{
+  background-color:green;
+}
+ 

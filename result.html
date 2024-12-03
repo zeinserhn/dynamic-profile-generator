@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #000000;
+            padding: 15px;
+            color: white;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+
+        .about {
+            display: none;
+        }
+
+        .about {
+            padding: 10px;
+            text-align: center;
+
+        }
+
+        .menu-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: row;
+            align-items: left;
+            text-align: left;
+            margin: 20px;
+        }
+
+        .profile-image {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .text-container {
+            margin: 100px;
+            align-items: center;
+        }
+
+        .text-container h2 {
+            margin: 10px;
+        }
+
+        .text-container h4 {
+            margin: 10px;
+        }
+
+        .text-container p {
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            background: #5b3314;
+            /* bade 7ot gradient*/
+            background-clip: text;
+            color: transparent;
+        }
+
+        .button-info button {
+            margin-top: 30px;
+            border: 3px solid #000000;
+            border-radius: 20px;
+            background-color: transparent;
+            margin: 10px;
+            padding: 10px;
+            width: 170px;
+            height: 40px;
+            color: #5b3314;
+        }
+
+        .button-info button:hover {
+            color: white;
+            background-color: #5b3314;
+            border: transparent;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            background-color: #000000;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        footer span {
+            margin: 30px;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .send-email {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .send-email textarea {
+            max-width: 200px;
+            border-radius: 20px;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        .send-email button {
+            width: 100px;
+            border-radius: 20px;
+            margin: 5px;
+            padding: 6px;
+            background-color: transparent;
+            color: #5b3314;
+        }
+
+        .send-email button:hover {
+            background-color: #5b3314;
+            color: white;
+        }
+
+        .text-container h2,
+        .text-container span {
+            display: inline;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            height: 50%;
+            position: relative;
+        }
+
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #aaa;
+            background: transparent;
+            border: none;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+
+        @media (max-width: 600px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                border-radius: 20px;
+                margin: 20px;
+                padding: 10px 10px;
+            }
+
+            .navbar-content div {
+                display: none;
+            }
+
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin-right: 20px;
+                width: 300px;
+                height: 300px;
+            }
+
+            .profile-text {
+                align-self: center;
+            }
+
+            .text-container {
+                margin: 30px;
+
+            }
+
+            .text-container h2 {
+                margin: 5px;
+            }
+
+            .text-container h4 {
+                margin: 5px;
+            }
+
+            .button-info button {
+                width: 120px;
+            }
+
+            footer span {
+                margin: 10px;
+            }
+        }
+
+        .emailmodal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .emailmodal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: auto;
+            height: auto;
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!--NavBar-->
+    <nav class="navbar" id="nav">
+        <div class="navbar-content">
+            <h3 id="username"></h3>
+            <button class="menu-icon">
+                <img src="more_down.svg">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </button>
+        </div>
+        <div class="about">
+            <h4 id="about"></h4>
+        </div>
+    </nav>
+    <!--protofilo-container-->
+    <div class="profile-container">
+        <img alt="profile" class="profile-image" id="profile">
+        <div class="text-container">
+            <h4>Hello,I'm</h4>
+            <h2 id="firstname"></h2>
+            <h2 id="lastname"></h2>
+            <p id="major"></p>
+            <div class="button-info">
+                <!--open cv ifram-->
+                <button id="openCvBtn">See CV</button>
+                <!--open modal form input email and submit button-->
+                <button id="openModalEmailBtn">Contact</button>
+            </div>
+        </div>
+        <!--cv modal-->
+        <div id="cvModal" class="modal">
+            <div class="modal-content">
+                <button class="close-btn">&times;</button>
+                <iframe id="cvIframe"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer>
+        <span id="github"><a href="#" id="githublink"><img src="github.svg" alt="github"></a></span>
+        <span id="linkedlin"><a href="#" id="linkedinlink"><img href="#" src="linkedin.svg" alt="linkedin"></a></span>
+    </footer>
+
+    <!--Modal-->
+    <div id="emailmodal" class="emailmodal">
+        <div class="emailmodal-content">
+            <button id="closeModalEmailbtn" class="close-btn">&times;</button>
+            <h2>Send Email</h2>
+            <form class="send-email" method="POST" enctype="text/plain">
+                <input name="subject" type="text" value="EmailConnect" style="display: none;">
+                <textarea type="text" name="body" placeholder="Let's connect..." rows="3" required></textarea>
+                <button id="submitbtn" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const openCvBtn = document.getElementById("openCvBtn");
+        const cvModal = document.getElementById("cvModal");
+        const closeCvBtn = document.querySelector(".close-btn");
+
+        openCvBtn.addEventListener("click", () => {
+            cvModal.style.display = "flex";
+            cvIframe.src = formData.cv;
+        });
+
+        closeCvBtn.addEventListener("click", () => {
+            cvModal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === cvModal) {
+                cvModal.style.display = "none";
+            }
+        });
+        //modal email 
+        const modal = document.getElementById('emailmodal');
+        const openModalBtn = document.getElementById('openModalEmailBtn');
+        const closeModalBtn = document.getElementById('closeModalEmailbtn');
+        openModalBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        const formData = JSON.parse(localStorage.getItem('formData'));
+        if (formData) {
+            document.getElementById('firstname').innerText = formData.firstname;
+            document.getElementById('lastname').innerText = formData.lastname
+            document.getElementById('username').innerText = formData.username;
+            document.getElementById('major').innerText = formData.major;
+            document.getElementById('major').style.color = formData.color;
+            document.getElementById('openCvBtn').style.color = formData.color;
+            document.getElementById('openModalEmailBtn').style.color = formData.color;
+            document.getElementsByClassName('.btnhover').backgroundColor = formData.color;
+            document.getElementById('githublink').href = formData.github;
+            document.getElementById('linkedinlink').href = formData.linkedin;
+            document.getElementById('nav').style.backgroundColor = formData.color;
+            document.querySelector('footer').style.backgroundColor = formData.color;
+            document.querySelector('form').action = 'mailto:' + formData.email;
+            document.getElementById('about').innerText = formData.about;
+            document.getElementById('profile').src = formData.image;
+        } else {
+            window.location.href = 'index.html';
+        }
+
+        const menuButton = document.querySelector('.menu-icon');
+        const hiddenSection = document.querySelector('.about');
+        menuButton.addEventListener('click', () => {
+
+            if (hiddenSection.style.display === 'none' || hiddenSection.style.display === '') {
+                hiddenSection.style.display = 'block';
+            } else {
+                hiddenSection.style.display = 'none';
+            }
+        });
+
+
+
+        const buttoncv = document.getElementById("openCvBtn");
+        buttoncv.addEventListener("mouseover", () => {
+            buttoncv.style.backgroundColor = formData.color;
+            buttoncv.style.color = "white"
+        });
+        buttoncv.addEventListener("mouseout", () => {
+            buttoncv.style.backgroundColor = "transparent";
+            buttoncv.style.color = formData.color;
+        });
+
+        const button = document.getElementById("openModalEmailBtn");
+        button.addEventListener("mouseover", () => {
+            button.style.backgroundColor = formData.color;
+            button.style.color = "white"
+        });
+        button.addEventListener("mouseout", () => {
+            button.style.backgroundColor = "transparent";
+            button.style.color = formData.color;
+        });
+        const buttonsubmit = document.getElementById("submitbtn");
+        buttonsubmit.addEventListener("mouseover", () => {
+            buttonsubmit.style.backgroundColor = formData.color;
+            buttonsubmit.style.color = "white"
+        });
+        buttonsubmit.addEventListener("mouseout", () => {
+            buttonsubmit.style.backgroundColor = "transparent";
+            buttonsubmit.style.color = formData.color;
+        });
+    </script>
+</body>
+
+</html>

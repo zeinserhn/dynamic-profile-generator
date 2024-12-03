@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="POST" id="myForm" class="myForm">
+        <h1>Profile Generator</h1>
+        <div class="section">
+            <input type="text" id="firstname" class="form-input" placeholder="Enter your first name" required>
+            <input type="text" id="lastname" class="form-input" placeholder="Enter your last name" required>
+        </div>
+        <div class="section">
+        
+            <input type="text" id="username" class="form-input" placeholder="Enter your username" required />
+           
+            <input type="email" id="email" class="form-input" placeholder="Enter your Email" required />
+        </div>
+        <div class="section">
+            <!--linkedlnurl-->
+            <input type="url" id="linkedin" class="form-input" placeholder="Enter your Linkedin URL" required />
+            <!--Github URL-->
+            <input type="url" id="github" class="form-input" placeholder="Enter your Github URL" required />
+        </div>
+        <div class="section">
+            <!--Majorselect-->
+            <select class="custom-select" id="major">
+                <option>Computer Science</option>
+                <option>Business</option>
+                <option>Engineering</option>
+                <option>Psychology</option>
+                <option>Biology</option>
+                <option>Front-End Developer</option>
+                <option>Web Developer</option>
+                <option>Cyber Security</option>
+            </select>
+            <!--colorPicker-->
+            <input type="color" id="color" class="color-picker-input" />
+            <!--about quotes-->
+            <select class="custom-select" id="about">
+                <option>About quotes</option>
+                <option>Creating and maintaining websites, design</option>
+                <option>Develop hardware and software systems</option>
+                <option>Builds the visual and interactive aspects of a website</option>
+                <option>Protects systems,networks,and data from cyber threats</option>
+                <option>Psychology is the scientific study of the mind</option>
+            </select>
+        </div>
+        <div class="section sectionbtn">
+            <!--Resume-->
+            <div class="file-input-wrapper">
+                <label for="cv-upload" class="custom-file-label" id="cvlbl">
+                    Upload CV
+                </label>
+                <input type="file" id="cv-upload" class="custom-file-input" accept=".pdf" required />
+            </div>
+            <!--Image-->
+            <div class="file-input-wrapper">
+                <label for="image-upload" class="custom-file-label" id="imglbl">
+                    Upload Image
+                </label>
+                <input type="file" id="image-upload" class="custom-file-input" accept=".jpg" required />
+            </div>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>
